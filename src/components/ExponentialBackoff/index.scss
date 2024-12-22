@@ -1,0 +1,197 @@
+.backoff-container {
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial,
+    sans-serif;
+  background: transparent;
+}
+
+.backoff-card {
+  background: white;
+  border-radius: 4px;
+  // Reduced shadow intensity and spread
+  box-shadow: 0 1px 3px rgba(162, 6, 6, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+
+  .card-header {
+    padding: 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+
+    h2 {
+      margin: 0;
+      color: #000; // Increased contrast
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  .card-content {
+    padding: 20px;
+    background: #ffffff;
+
+    section {
+      margin-bottom: 24px;
+
+      h3 {
+        color: #000; // Increased contrast
+        margin-bottom: 12px;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      h4 {
+        color: #000; // Increased contrast
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: #333; // Increased contrast
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.sequence-diagram {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+
+  .timeline {
+    .attempt {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+
+      .time {
+        width: 80px;
+        color: #333; // Increased contrast
+        font-family: monospace;
+        font-weight: 500;
+      }
+
+      .arrow {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .label {
+          background: #e3f2fd;
+          padding: 8px;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          border: 1px solid rgba(33, 150, 243, 0.1);
+        }
+
+        .response {
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          font-weight: 500;
+
+          &.error {
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid rgba(198, 40, 40, 0.1);
+          }
+
+          &.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid rgba(46, 125, 50, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+.mermaid {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+projects-page .projects-container .projects-list > * {
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px) !important;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.retry-visualization {
+  .retry-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .retry-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      span {
+        min-width: 100px;
+        font-family: monospace;
+        color: #333; // Increased contrast
+        font-weight: 500;
+      }
+
+      .bar {
+        flex: 1;
+        height: 20px;
+        background: #e3f2fd;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid rgba(33, 150, 243, 0.1);
+
+        .fill {
+          height: 100%;
+          background: #2196f3;
+          transition: width 0.3s ease;
+        }
+      }
+    }
+  }
+}
+
+.key-components,
+.best-practices {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 8px;
+      color: #333; // Increased contrast
+      font-weight: 600;
+      font: 1.3em sans-serif;
+    }
+  }
+}
+
+.code-section {
+  pre {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border: 1px solid #333;
+    text-align: left;
+  }
+}
