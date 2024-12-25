@@ -9,15 +9,26 @@ import LogoSubtitle from '../../assets/images/logo_sub.png'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const [showNav, setShowNav] = useState(false)
-  const [showGreeting, setShowGreeting] = useState(false)
+  const [setShowNav] = useState(false)
+  const [setShowGreeting] = useState(false)
   const [jobTitle, setJobTitle] = useState('Web')
   const [jobTitleClass, setJobTitleClass] = useState('')
 
   const nameArray = ['f', 'r', 'e']
-  const nameDArray = ['h', 'l', 'y', ' ', 'B', 'r', 'e', 'w', 'e', 'd', '!']
-  const jobArray = ['t', 'e', 'c', 'h', ' ', 'b', 'l', 'o', 'g', 's', '.']
-  const greetingArray = ['W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o']
+  const nameDArray = [
+    'h',
+    'l',
+    'y',
+    ' ',
+    'B',
+    'r',
+    'e',
+    'w',
+    '-',
+    'e',
+    'd',
+    '!',
+  ]
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -27,13 +38,13 @@ const Home = () => {
     return () => clearTimeout(timeoutId)
   }, [])
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowGreeting(true)
-    }, 1000)
+  // useEffect(() => {
+  //   const timeoutId = setTimeout(() => {
+  //     setShowGreeting(true)
+  //   }, 1000)
 
-    return () => clearTimeout(timeoutId)
-  }, [])
+  //   return () => clearTimeout(timeoutId)
+  // }, [])
 
   useEffect(() => {
     const jobTitles = ['Explore', 'Learn', 'Hustle']

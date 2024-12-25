@@ -9,7 +9,7 @@ body {
   height: 100%;
   z-index: 999999;
   /* background: #fb8500; */
-  background-image: url(./assets/images/home-bg.jpg);
+  background-image: url(./assets/images/cup-near-cloth-twig_1_11zon.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -52,7 +52,6 @@ a {
 }
 
 .left .bg-img {
-  /* background: url('../img/headshot1-bw.png') center center no-repeat; */
   background-size: cover;
   height: 100%;
   width: 100%;

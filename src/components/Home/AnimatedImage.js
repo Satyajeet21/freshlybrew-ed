@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import LogoM from '../../assets/images/IMG_0418-bDchsiR9--transformed.jpeg';
-import './AnimatedImage.scss';
+import React, { useEffect, useState } from 'react'
+import LogoM from '../../assets/images/code.png'
+import './AnimatedImage.scss'
 
 const AnimatedImage = () => {
-  const [animationState, setAnimationState] = useState('initial');
+  const [animationState, setAnimationState] = useState('initial')
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setAnimationState('frame');
-    }, 4000);
+      setAnimationState('frame')
+    }, 4000)
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <div className={`image-container ${animationState}`}>
@@ -19,7 +19,7 @@ const AnimatedImage = () => {
         <img src={LogoM} className="profile-image" alt="Profile" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AnimatedImage;
+export default AnimatedImage

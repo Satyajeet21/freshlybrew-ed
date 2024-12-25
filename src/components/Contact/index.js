@@ -15,7 +15,6 @@ const Contact = () => {
       setLetterClass('text-animate-hover')
     }, 3000)
 
-    // Cleanup function
     return () => clearTimeout(timeoutId)
   }, [])
 
@@ -23,7 +22,12 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm('service_73nbzmp', 'template_iyq4ihi', form.current, '17JLkIwo9xIMVmIxz')
+      .sendForm(
+        'service_73nbzmp',
+        'template_iyq4ihi',
+        form.current,
+        '17JLkIwo9xIMVmIxz'
+      )
       .then(
         () => {
           alert('Message successfully sent!')
@@ -93,7 +97,8 @@ const Contact = () => {
           <br />
           India,
           <br />
-          301, Shree Swami Samartha Apartment, Wadgaon Sheri, Pune, Maharashtra (411014) <br />
+          301, Shree Swami Samartha Apartment, Wadgaon Sheri, Pune, Maharashtra
+          (411014) <br />
           <br />
           <span>satyajeetb.se@gmail.com</span>
         </div>
@@ -104,7 +109,6 @@ const Contact = () => {
               <Popup>Come over for a cup of coffee :)</Popup>
             </Marker>
           </MapContainer>
-
         </div>
       </div>
       <Loader type="pacman" />

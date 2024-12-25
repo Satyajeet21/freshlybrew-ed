@@ -19,8 +19,6 @@ const About = () => {
     const timeoutId = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 3000)
-
-    // Cleanup function
     return () => clearTimeout(timeoutId)
   }, [])
 

@@ -1,6 +1,4 @@
 .nav-bar {
-  // background: #181818;
-  // background: #14213d;
   background: #1b1004;
 
   width: 60px;
@@ -94,7 +92,7 @@
     }
     a.active {
       svg {
-        color: #a34c1f;
+        color: #fc6c44;
       }
     }
   }
@@ -120,7 +118,7 @@
 
       &:hover {
         .anchor-icon {
-          color: #ef3d84;
+          color: #fc6c44;
         }
       }
     }

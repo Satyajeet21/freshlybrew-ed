@@ -1,34 +1,35 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import Portfolio from '../Portfolio'
 import './index.scss'
 import { FaArrowRight } from 'react-icons/fa'
-import Modal from '../Modal' // Import Modal component
-import ExponentialBackoff from '../ExponentialBackoff' // Import ExponentialBackoff
+import Modal from '../Modal'
+import ExponentialBackoff from '../ExponentialBackoff'
+import image1 from '../../assets/images/image1.png'
 
 const projectData = [
   {
-    title: 'Ultimate Resume Building Guide',
+    title: 'Exponential Backoff & Retry Strategy',
     description:
-      'Discover the top online resources to create professional, eye-catching resumes that help you stand out in todays competitive job market. From user-friendly templates to AI-powered writing assistance, these websites will transform your job application strategy and boost your chances of landing your dream job.',
-    techStack: 'OverLeaf : Specialized resume creation website',
+      'Exponential backoff is a retry strategy that progressively increases the waiting time between retry attempts. When a request fails, instead of immediately retrying or waiting a fixed time, the system waits for progressively longer periods between each retry attempt.',
+    techStack: 'Click on the below button for complete content',
     projectLink: '',
+    image: image1,
   },
 ]
 
 const Projects = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false) // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const projectsRef = useRef(null)
 
   const scrollRight = () => {
     if (projectsRef.current) {
       projectsRef.current.scrollBy({
-        left: 300, // Adjust scroll distance
+        left: 300,
         behavior: 'smooth',
       })
     }
   }
 
-  // Open modal function
   const openModal = () => {
     setIsModalOpen(true)
   }
@@ -44,6 +45,7 @@ const Projects = () => {
               description={project.description}
               techStack={project.techStack}
               projectLink={project.projectLink}
+              image={project.image}
               onClick={openModal}
             />
           ))}
@@ -53,7 +55,6 @@ const Projects = () => {
         </button>
       </div>
 
-      {/* Modal component */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ExponentialBackoff />
       </Modal>

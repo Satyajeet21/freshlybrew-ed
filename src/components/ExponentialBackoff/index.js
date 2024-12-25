@@ -63,7 +63,7 @@ const backoffRequest = async (url, options = {}) => {
         <div className="card-content">
           <section>
             <h2>What is Exponential Backoff?</h2>
-            <h3 style={{ color: 'black' }}>
+            <h3>
               Exponential backoff is a retry strategy where each retry attempt
               waits longer before making the next attempt. The waiting time
               typically doubles with each retry, helping to prevent server
@@ -197,6 +197,16 @@ const backoffRequest = async (url, options = {}) => {
               </li>
               <li>Consider different retry strategies based on error types</li>
               <li>Log retry attempts for monitoring and debugging</li>
+            </ul>
+          </section>
+
+          <section className="dont-practices">
+            <h3>Don'ts</h3>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Retry non-idempotent operations</li>
+              <li>Ignore response status codes</li>
+              <li>Use fixed delays</li>
+              <li>Retry forever</li>
             </ul>
           </section>
         </div>

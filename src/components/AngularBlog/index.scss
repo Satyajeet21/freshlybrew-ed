@@ -7,7 +7,7 @@ $themes: (
     text-primary: #2c3e50,
     text-secondary: #34495e,
     border: #ddd,
-    hover: #e7e7e7
+    hover: #e7e7e7,
   ),
   dark: (
     primary: #61dafb,
@@ -16,11 +16,10 @@ $themes: (
     text-primary: #ffffff,
     text-secondary: #b0b0b0,
     border: #444,
-    hover: #2a2a2a
-  )
+    hover: #2a2a2a,
+  ),
 );
 
-// Mixins
 @mixin theme-aware($property, $color) {
   @each $theme, $map in $themes {
     .#{$theme}-theme & {
@@ -29,7 +28,6 @@ $themes: (
   }
 }
 
-// Base Mixins
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -40,16 +38,14 @@ $themes: (
   transition: all 0.3s ease;
 }
 
-// Global Styles
 .split-page-container {
   display: flex;
   height: 100vh;
   font-family: 'Arial', sans-serif;
-  
+
   @include theme-aware(background-color, background-main);
   @include theme-aware(color, text-primary);
 
-  // Mode Toggle Button
   .mode-toggle {
     position: fixed;
     top: 20px;
@@ -72,7 +68,7 @@ $themes: (
     overflow-y: auto;
     margin-left: 55px;
     padding-top: 90px;
-    
+
     @include theme-aware(background-color, background-secondary);
     @include theme-aware(border-right-color, border);
     border-right-width: 1px;
@@ -128,7 +124,6 @@ $themes: (
     }
   }
 
-  // Responsive Design
   @media (max-width: 768px) {
     flex-direction: column;
 
