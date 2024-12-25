@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Loader from 'react-loaders'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [notification, setNotification] = useState({ message: '', type: '' })
   const form = useRef()
 
   useEffect(() => {
@@ -30,11 +30,23 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert('Message successfully sent!')
-          window.location.reload(false)
+          setNotification({
+            message: 'Message successfully sent!',
+            type: 'success',
+          })
+          setTimeout(() => {
+            setNotification({ message: '', type: '' })
+          }, 3000)
+          form.current.reset()
         },
         () => {
-          alert('Failed to send the message, please try again')
+          setNotification({
+            message: 'Failed to send the message, please try again',
+            type: 'error',
+          })
+          setTimeout(() => {
+            setNotification({ message: '', type: '' })
+          }, 3000)
         }
       )
   }
@@ -53,7 +65,7 @@ const Contact = () => {
           <p>
             I am interested in freelance opportunities - especially on ambitious
             or large projects. However, if you have any other requests or
-            questions, don't hesitate to contact me using below form either.
+            questions, don't hesitate to contact me using the form below.
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
@@ -111,6 +123,14 @@ const Contact = () => {
           </MapContainer>
         </div>
       </div>
+
+      {/* Notification Section */}
+      {notification.message && (
+        <div className={`notification ${notification.type}`}>
+          {notification.message}
+        </div>
+      )}
+
       <Loader type="pacman" />
     </>
   )
